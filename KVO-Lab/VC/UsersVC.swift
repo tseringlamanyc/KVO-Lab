@@ -26,6 +26,7 @@ class UsersVC: UIViewController {
         tableView.delegate = self
         loadAllUsers()
         configureUsersObservation()
+        dump(allUsers)
     }
     
     private func loadAllUsers() {
@@ -61,11 +62,10 @@ extension UsersVC: UITableViewDataSource {
 
 extension UsersVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let aUser = allUsers[indexPath.row]
         guard let transVC = storyboard?.instantiateViewController(identifier: "TransactionVC") as? TransactionVC else {
-            // developer error
-            fatalError("could not downcast to TransactionViewController")
+            fatalError("")
         }
+        let aUser = allUsers[indexPath.row]
         transVC.aUser = aUser
         tabBarController?.present(transVC, animated: true)
     }

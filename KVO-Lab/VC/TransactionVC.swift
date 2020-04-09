@@ -12,16 +12,16 @@ class TransactionVC: UIViewController {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var currentBalance: UILabel!
-    
-    public var aUser: UserAccount!
-    
+
+    public var aUser: UserAccount?
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
     }
     
-    private func updateUI() {
-        welcomeLabel.text = "Welcome \(aUser?.userName ?? "no name")"
+    func updateUI() {
+        welcomeLabel.text = "Welcome \(aUser?.userName ?? "")"
     }
     
     @IBAction func depositeChanged(_ sender: UISlider) {
