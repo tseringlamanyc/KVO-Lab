@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		524D7856243E762900041FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D7855243E762900041FFB /* AppDelegate.swift */; };
 		524D7858243E762900041FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D7857243E762900041FFB /* SceneDelegate.swift */; };
-		524D785A243E762900041FFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D7859243E762900041FFB /* ViewController.swift */; };
+		524D785A243E762900041FFB /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524D7859243E762900041FFB /* CreateVC.swift */; };
 		524D785D243E762900041FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D785B243E762900041FFB /* Main.storyboard */; };
 		524D785F243E762F00041FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524D785E243E762F00041FFB /* Assets.xcassets */; };
 		524D7862243E762F00041FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D7860243E762F00041FFB /* LaunchScreen.storyboard */; };
+		52B6D74E243EBD1400522F9B /* TransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D74D243EBD1400522F9B /* TransactionVC.swift */; };
+		52B6D750243EBD1C00522F9B /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D74F243EBD1C00522F9B /* UsersVC.swift */; };
+		52B6D754243EBE0200522F9B /* BankUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D753243EBE0200522F9B /* BankUser.swift */; };
+		52B6D757243EC69800522F9B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D756243EC69800522F9B /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		524D7852243E762900041FFB /* KVO-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KVO-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524D7855243E762900041FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524D7857243E762900041FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		524D7859243E762900041FFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		524D7859243E762900041FFB /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 		524D785C243E762900041FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		524D785E243E762F00041FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524D7861243E762F00041FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		524D7863243E762F00041FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B6D74D243EBD1400522F9B /* TransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVC.swift; sourceTree = "<group>"; };
+		52B6D74F243EBD1C00522F9B /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		52B6D753243EBE0200522F9B /* BankUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankUser.swift; sourceTree = "<group>"; };
+		52B6D756243EC69800522F9B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		524D7854243E762900041FFB /* KVO-Lab */ = {
 			isa = PBXGroup;
 			children = (
-				524D7855243E762900041FFB /* AppDelegate.swift */,
-				524D7857243E762900041FFB /* SceneDelegate.swift */,
-				524D7859243E762900041FFB /* ViewController.swift */,
-				524D785B243E762900041FFB /* Main.storyboard */,
-				524D785E243E762F00041FFB /* Assets.xcassets */,
-				524D7860243E762F00041FFB /* LaunchScreen.storyboard */,
+				52B6D752243EBD6E00522F9B /* KVO */,
+				52B6D74C243EBCF700522F9B /* VC */,
+				52B6D755243EBF6300522F9B /* Supporting Files */,
 				524D7863243E762F00041FFB /* Info.plist */,
 			);
 			path = "KVO-Lab";
+			sourceTree = "<group>";
+		};
+		52B6D74C243EBCF700522F9B /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				524D7859243E762900041FFB /* CreateVC.swift */,
+				52B6D74D243EBD1400522F9B /* TransactionVC.swift */,
+				52B6D74F243EBD1C00522F9B /* UsersVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		52B6D752243EBD6E00522F9B /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				52B6D753243EBE0200522F9B /* BankUser.swift */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
+		52B6D755243EBF6300522F9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				524D7855243E762900041FFB /* AppDelegate.swift */,
+				524D7857243E762900041FFB /* SceneDelegate.swift */,
+				524D785B243E762900041FFB /* Main.storyboard */,
+				524D785E243E762F00041FFB /* Assets.xcassets */,
+				524D7860243E762F00041FFB /* LaunchScreen.storyboard */,
+				52B6D756243EC69800522F9B /* Alert.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				524D785A243E762900041FFB /* ViewController.swift in Sources */,
+				52B6D750243EBD1C00522F9B /* UsersVC.swift in Sources */,
+				524D785A243E762900041FFB /* CreateVC.swift in Sources */,
+				52B6D754243EBE0200522F9B /* BankUser.swift in Sources */,
+				52B6D74E243EBD1400522F9B /* TransactionVC.swift in Sources */,
 				524D7856243E762900041FFB /* AppDelegate.swift in Sources */,
 				524D7858243E762900041FFB /* SceneDelegate.swift in Sources */,
+				52B6D757243EC69800522F9B /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

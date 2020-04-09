@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UsersVC.swift
 //  KVO-Lab
 //
 //  Created by Tsering Lama on 4/8/20.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UsersVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
