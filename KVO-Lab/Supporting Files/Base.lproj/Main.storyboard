@@ -10,18 +10,87 @@
         <!--Transaction-->
         <scene sceneID="ymv-Lq-x6J">
             <objects>
-                <viewController id="UIG-7S-Riv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransactionVC" id="UIG-7S-Riv" customClass="TransactionVC" customModule="KVO_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h7L-qc-WSn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add or withdrawl (Tsering)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGj-iG-DeV">
+                                <rect key="frame" x="20" y="64" width="374" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="pps-tl-JVm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-xZ-AdK">
+                                <rect key="frame" x="20" y="146" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="3XI-rt-bWa">
+                                <rect key="frame" x="18" y="175" width="378" height="31"/>
+                                <connections>
+                                    <action selector="depositeChanged:" destination="UIG-7S-Riv" eventType="valueChanged" id="Io8-6w-N3W"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Withdrawl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfe-QN-fzt">
+                                <rect key="frame" x="20" y="245" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="p4t-qR-gbK">
+                                <rect key="frame" x="18" y="274" width="378" height="31"/>
+                                <connections>
+                                    <action selector="withdrawlChanged:" destination="UIG-7S-Riv" eventType="valueChanged" id="dIf-87-DXV"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooy-gt-sLc">
+                                <rect key="frame" x="20" y="412" width="374" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="hY1-Qk-Oae"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="anQ-y2-ydk" firstAttribute="trailing" secondItem="gfe-QN-fzt" secondAttribute="trailing" constant="20" id="14X-BJ-DR1"/>
+                            <constraint firstItem="3XI-rt-bWa" firstAttribute="leading" secondItem="anQ-y2-ydk" secondAttribute="leading" constant="20" id="3cp-Sp-zWK"/>
+                            <constraint firstItem="sGj-iG-DeV" firstAttribute="top" secondItem="anQ-y2-ydk" secondAttribute="top" constant="20" id="3sg-W3-dWs"/>
+                            <constraint firstItem="3XI-rt-bWa" firstAttribute="top" secondItem="24c-xZ-AdK" secondAttribute="bottom" constant="8" id="B2W-Rr-hsP"/>
+                            <constraint firstItem="anQ-y2-ydk" firstAttribute="trailing" secondItem="3XI-rt-bWa" secondAttribute="trailing" constant="20" id="CLc-9d-t2m"/>
+                            <constraint firstItem="gfe-QN-fzt" firstAttribute="top" secondItem="3XI-rt-bWa" secondAttribute="bottom" constant="40" id="DEx-ez-VqP"/>
+                            <constraint firstItem="anQ-y2-ydk" firstAttribute="trailing" secondItem="ooy-gt-sLc" secondAttribute="trailing" constant="20" id="GjL-Zp-hGP"/>
+                            <constraint firstItem="ooy-gt-sLc" firstAttribute="leading" secondItem="anQ-y2-ydk" secondAttribute="leading" constant="20" id="Hl8-b1-iMt"/>
+                            <constraint firstItem="p4t-qR-gbK" firstAttribute="leading" secondItem="anQ-y2-ydk" secondAttribute="leading" constant="20" id="IYc-bW-M4m"/>
+                            <constraint firstItem="sGj-iG-DeV" firstAttribute="leading" secondItem="anQ-y2-ydk" secondAttribute="leading" constant="20" id="eHS-Fz-Uih"/>
+                            <constraint firstItem="ooy-gt-sLc" firstAttribute="top" secondItem="p4t-qR-gbK" secondAttribute="bottom" constant="108" id="ew6-TZ-VQU"/>
+                            <constraint firstItem="anQ-y2-ydk" firstAttribute="trailing" secondItem="p4t-qR-gbK" secondAttribute="trailing" constant="20" id="fv2-13-IZr"/>
+                            <constraint firstItem="gfe-QN-fzt" firstAttribute="leading" secondItem="anQ-y2-ydk" secondAttribute="leading" constant="20" id="g2B-0s-DRY"/>
+                            <constraint firstItem="24c-xZ-AdK" firstAttribute="leading" secondItem="anQ-y2-ydk" secondAttribute="leading" constant="20" id="iGz-e8-Mdg"/>
+                            <constraint firstItem="anQ-y2-ydk" firstAttribute="trailing" secondItem="sGj-iG-DeV" secondAttribute="trailing" constant="20" id="mSK-8Q-W7H"/>
+                            <constraint firstItem="anQ-y2-ydk" firstAttribute="trailing" secondItem="24c-xZ-AdK" secondAttribute="trailing" constant="20" id="sFu-bJ-kSB"/>
+                            <constraint firstItem="p4t-qR-gbK" firstAttribute="top" secondItem="gfe-QN-fzt" secondAttribute="bottom" constant="8" id="xH9-sj-j8g"/>
+                            <constraint firstItem="24c-xZ-AdK" firstAttribute="top" secondItem="sGj-iG-DeV" secondAttribute="bottom" constant="20" id="yeR-je-aL7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="anQ-y2-ydk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Transaction" image="dollarsign.circle.fill" catalog="system" id="q7R-x2-EoE"/>
+                    <navigationItem key="navigationItem" id="P7y-ys-lHA"/>
+                    <connections>
+                        <outlet property="currentBalance" destination="ooy-gt-sLc" id="r9M-OR-Y1D"/>
+                        <outlet property="welcomeLabel" destination="sGj-iG-DeV" id="s25-nM-coH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg2-sZ-oac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="168"/>
+            <point key="canvasLocation" x="481.15942028985512" y="167.41071428571428"/>
         </scene>
         <!--Users-->
         <scene sceneID="cNN-c1-IRU">
@@ -78,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OKF-E9-pbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479.71014492753625" y="837.72321428571422"/>
+            <point key="canvasLocation" x="481" y="846"/>
         </scene>
         <!--Create-->
         <scene sceneID="Fbj-CJ-mSK">

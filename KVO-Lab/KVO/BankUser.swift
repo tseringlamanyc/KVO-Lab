@@ -13,7 +13,6 @@ class UserAccount: NSObject {
     static var shared = UserAccount()
     var userName: String
     @objc dynamic var userBalance: Double
-    
     override private init() {
         userName = "userName"
         userBalance = 0.0

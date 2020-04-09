@@ -23,7 +23,9 @@ class UsersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         configureUsersObservation()
+        loadAllUsers()
     }
     
     private func configureUsersObservation() {
@@ -53,5 +55,14 @@ extension UsersVC: UITableViewDataSource {
         cell.textLabel?.text = aUser.userName
         cell.detailTextLabel?.text = "$ \(aUser.userBalance.description)"
         return cell
+    }
+}
+
+extension UsersVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let aUser = allTheUsers[indexPath.row]
+        let transVC = TransactionVC()
+        transVC.aUser = aUser
+        navigationController?.pushViewController(transVC, animated: true)
     }
 }
