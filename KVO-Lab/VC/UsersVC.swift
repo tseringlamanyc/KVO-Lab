@@ -12,9 +12,9 @@ class UsersVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var allUsers: NSKeyValueObservation?
+    private var allUsersObservation: NSKeyValueObservation?
     
-    private var allTheUsers = [UserAccount]() {
+    private var allUsers = [UserAccount]() {
         didSet {
             tableView.reloadData()
         }
@@ -24,34 +24,35 @@ class UsersVC: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        configureUsersObservation()
         loadAllUsers()
-    }
-    
-    private func configureUsersObservation() {
-        allUsers = AllUsers.shared.observe(\.allUsers, options: [.old, .new], changeHandler: { [weak self](allusers, change) in
-            guard let newUsers = change.newValue else {return}
-            self?.allTheUsers = newUsers
-        })
+        configureUsersObservation()
     }
     
     private func loadAllUsers() {
-        allTheUsers = AllUsers.shared.allUsers
+        allUsers = AllUsers.shared.allUsers
+    }
+    
+    
+    private func configureUsersObservation() {
+        allUsersObservation = AllUsers.shared.observe(\.allUsers, options: [.old, .new], changeHandler: { [weak self](allusers, change) in
+            guard let newUsers = change.newValue else {return}
+            self?.allUsers = newUsers
+        })
     }
     
     deinit {
-        allUsers?.invalidate()
+        allUsersObservation?.invalidate()
     }
 }
 
 extension UsersVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allTheUsers.count
+        return allUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-        let aUser = allTheUsers[indexPath.row]
+        let aUser = allUsers[indexPath.row]
         cell.textLabel?.text = aUser.userName
         cell.detailTextLabel?.text = "$ \(aUser.userBalance.description)"
         return cell
@@ -60,9 +61,12 @@ extension UsersVC: UITableViewDataSource {
 
 extension UsersVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let aUser = allTheUsers[indexPath.row]
-        let transVC = TransactionVC()
+        let aUser = allUsers[indexPath.row]
+        guard let transVC = storyboard?.instantiateViewController(identifier: "TransactionVC") as? TransactionVC else {
+            // developer error
+            fatalError("could not downcast to TransactionViewController")
+        }
         transVC.aUser = aUser
-        navigationController?.pushViewController(transVC, animated: true)
+        tabBarController?.present(transVC, animated: true)
     }
 }

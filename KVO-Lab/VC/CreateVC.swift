@@ -30,7 +30,8 @@ class CreateVC: UIViewController {
             return
         }
         
-        let user = UserAccount.shared
+        let user = UserAccount()
+        
         user.userName = userName
         user.userBalance = Double(balance) ?? 0.0
         
