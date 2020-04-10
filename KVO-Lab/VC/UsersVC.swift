@@ -13,6 +13,7 @@ class UsersVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var allUsersObservation: NSKeyValueObservation?
+    private var balanceObservation: NSKeyValueObservation?
     
     private var allUsers = [UserAccount]() {
         didSet {
@@ -67,6 +68,6 @@ extension UsersVC: UITableViewDelegate {
         }
         let aUser = allUsers[indexPath.row]
         transVC.aUser = aUser
-        tabBarController?.present(transVC, animated: true)
+        navigationController?.pushViewController(transVC, animated: true)
     }
 }

@@ -12,8 +12,10 @@ import Foundation
 class UserAccount: NSObject {
     static var shared = UserAccount()
     var userName: String = "no name"
-    @objc dynamic var userBalance: Double = 0.0
-
+    @objc dynamic var userBalance: Double
+    override  init() {
+        userBalance = 0.0
+    }
 }
 
 @objc

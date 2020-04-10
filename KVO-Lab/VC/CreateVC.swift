@@ -41,6 +41,7 @@ class CreateVC: UIViewController {
         
         userNameTF.text = ""
         balanceTF.text = ""
+        
     }
 
 }
