@@ -13,6 +13,7 @@
 		524D785D243E762900041FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D785B243E762900041FFB /* Main.storyboard */; };
 		524D785F243E762F00041FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524D785E243E762F00041FFB /* Assets.xcassets */; };
 		524D7862243E762F00041FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524D7860243E762F00041FFB /* LaunchScreen.storyboard */; };
+		52A7D8DE24413F3F0033B8E2 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7D8DD24413F3F0033B8E2 /* UserProfileVC.swift */; };
 		52B6D74E243EBD1400522F9B /* TransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D74D243EBD1400522F9B /* TransactionVC.swift */; };
 		52B6D750243EBD1C00522F9B /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D74F243EBD1C00522F9B /* UsersVC.swift */; };
 		52B6D754243EBE0200522F9B /* BankUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D753243EBE0200522F9B /* BankUser.swift */; };
@@ -28,6 +29,7 @@
 		524D785E243E762F00041FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		524D7861243E762F00041FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		524D7863243E762F00041FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A7D8DD24413F3F0033B8E2 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		52B6D74D243EBD1400522F9B /* TransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVC.swift; sourceTree = "<group>"; };
 		52B6D74F243EBD1C00522F9B /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		52B6D753243EBE0200522F9B /* BankUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankUser.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				524D7859243E762900041FFB /* CreateVC.swift */,
 				52B6D74D243EBD1400522F9B /* TransactionVC.swift */,
 				52B6D74F243EBD1C00522F9B /* UsersVC.swift */,
+				52A7D8DD24413F3F0033B8E2 /* UserProfileVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				524D7856243E762900041FFB /* AppDelegate.swift in Sources */,
 				524D7858243E762900041FFB /* SceneDelegate.swift in Sources */,
 				52B6D757243EC69800522F9B /* Alert.swift in Sources */,
+				52A7D8DE24413F3F0033B8E2 /* UserProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

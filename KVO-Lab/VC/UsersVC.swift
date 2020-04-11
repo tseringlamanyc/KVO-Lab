@@ -27,7 +27,6 @@ class UsersVC: UIViewController {
         tableView.delegate = self
         loadAllUsers()
         configureUsersObservation()
-        dump(allUsers)
     }
     
     private func loadAllUsers() {
@@ -57,6 +56,13 @@ extension UsersVC: UITableViewDataSource {
         let aUser = allUsers[indexPath.row]
         cell.textLabel?.text = aUser.userName
         cell.detailTextLabel?.text = "$ \(aUser.userBalance.description)"
+        
+        balanceObservation = UserAccount.shared.observe(\.userBalance, options: [.new], changeHandler: { (account, change) in
+            guard let newBalance = change.newValue else {return}
+            let stringBalance = String(format: "%2.f", newBalance)
+            cell.detailTextLabel?.text = "$ \(stringBalance)"
+        })
+        
         return cell
     }
 }
@@ -66,6 +72,7 @@ extension UsersVC: UITableViewDelegate {
         guard let transVC = storyboard?.instantiateViewController(identifier: "TransactionVC") as? TransactionVC else {
             fatalError("")
         }
+    
         let aUser = allUsers[indexPath.row]
         transVC.aUser = aUser
         navigationController?.pushViewController(transVC, animated: true)
